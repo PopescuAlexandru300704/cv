@@ -1,0 +1,245 @@
+/* Resetari si stiluri globale */
+* {
+    box-sizing: border-box; /* Include padding/border in dimensiunea elementului */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Sau alt font din Figma */
+    background-color: #36abaf; /* Culoare de fundal deschisa (aproximativa) */
+    color: #333; /* Culoare text standard */
+    line-height: 1.6;
+    display: flex; /* Ajuta la centrarea containerului daca e nevoie */
+    justify-content: center;
+    padding: 20px; /* Spatiu pe margini pe ecrane mici */
+}
+
+/* Container Principal */
+.container {
+    max-width: 900px; /* Latimea maxima a continutului */
+    width: 100%;
+    background-color: #36abaf; /* Fundal alb pentru zona de continut */
+    padding: 40px 50px; /* Spatiu interior (sus/jos stanga/dreapta) */
+    border-radius: 10px; /* Colturi rotunjite pentru container */
+    box-shadow: 0 4px 15px rgba(211, 20, 20, 0.1); /* Umbra subtila */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Sectiunea Intro/Antet */
+.intro-section {
+    text-align: center; /* Centreaza elementele din antet */
+    margin-bottom: 50px; /* Spatiu sub antet */
+}
+
+.profile-pic {
+    width: 150px; /* Dimensiune imagine */
+    height: 150px;
+    border-radius: 50%; /* Face imaginea rotunda */
+    object-fit: cover; /* Previne distorsionarea imaginii */
+    margin-bottom: 20px; /* Spatiu sub imagine */
+    border: 4px solid #e0e0e0; /* Optional: margine subtila */
+}
+
+.name {
+    font-size: 2.8em; /* Dimensiune mare pentru nume */
+    font-weight: 700; /* Bold */
+    color: #1a1a1a; /* Culoare text mai inchisa */
+    margin-bottom: 8px;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #555; /* Culoare gri pentru tagline */
+    font-weight: 400;
+    margin-bottom: 30px; /* Spatiu sub tagline */
+}
+
+/* Titluri de sectiune */
+.section-title {
+    font-size: 2.0em;
+    font-weight: 600;
+    color: #fafcfe; /* O culoare distincta pentru titluri */
+    text-align: center; /* Centreaza titlurile de sectiune */
+    margin-bottom: 30px; /* Spatiu sub titlu */
+    position: relative; /* Pentru potentiale elemente decorative (ex: linie dedesubt) */
+    padding-bottom: 10px;
+}
+
+/* Optional: Linie sub titlu */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #06B1B7; /* O culoare de accent */
+    margin: 10px auto 0; /* Centreaza linia */
+}
+
+
+
+.about-me {
+   margin-bottom: 50px;
+}
+
+.about-text {
+    font-size: 1em;
+    color: #faf9f9;
+    max-width: 700px; /* Limiteaza latimea textului pentru lizibilitate */
+    margin: 0 auto; /* Centreaza blocul de text */
+    text-align: center; /* Centreaza textul in sine */
+}
+
+/* Sectiunea Experienta */
+.experience {
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    display: grid;
+    /* Creeaza 2 coloane de latime egala pe ecrane mari */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px; /* Spatiu intre carduri */
+}
+
+.grid-item.card {
+   
+    padding: 25px;
+    border-radius: 8px; /* Colturi rotunjite */
+    border: 1px solid #e9ecef; /* Margine subtila */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Efect la hover */
+    
+}
+
+
+
+.grid-item.card:hover {
+    transform: translateY(-5px); /* Ridica usor cardul la hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Umbra mai pronuntata la hover */
+}
+
+.grid-item p {
+    font-size: 0.95em;
+    color: #fcfbfb;
+    line-height: 1.7;
+}
+
+.emoji { /* Stilizare pentru emoji daca e in span */
+    display: inline-block; /* Sau block/flex daca vrei sa-l pui deasupra */
+    font-size: 1.5em; /* Mareste emoji-ul */
+    margin-right: 10px; /* Spatiu intre emoji si text */
+    vertical-align: middle; /* Alinere verticala cu textul */
+}
+
+
+/* Responsive Design: Pentru ecrane mai mici (ex: telefoane) */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 25px;
+    }
+
+    .name {
+        font-size: 2.2em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .grid-container {
+        /* Trece la o singura coloana pe ecrane mici */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0; /* Scoate padding-ul body pe ecrane foarte mici */
+    }
+    .container {
+        padding: 20px 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0; /* Scoate rotunjirea pe ecrane mici */
+        box-shadow: none; /* Scoate umbra */
+    }
+
+     .name {
+        font-family: 'Poppins', sans-serif; /* Aplica fontul aici */
+        font-size: 2.8em;
+        width: 2.8em;
+        height: 2.8em;
+        font-weight: 700; /* S-ar putea sa trebuiasca sa ajustezi grosimea daca fontul nu suporta 700 */
+        color: #1a1a1a;
+        margin-bottom: 8px;
+    }
+
+    .tagline {
+        font-size: 0.9em;
+    }
+
+    .section-title {
+        font-size: 1.3em;
+    }
+
+     .grid-item.card {
+        padding: 20px;
+    }
+}
+
+.card-web {
+    background: linear-gradient(
+  to right,
+  #1A979B 7%, 
+  #251043 34%, 
+  #38126D 57%, 
+  #261045 85%, 
+  #190634 100%
+);
+
+}
+
+.card-data {
+    background: linear-gradient(
+        to right,
+        #339574 7%, 
+        #251043 34%, 
+        #38126D 57%, 
+        #251043 85%, 
+        #2CB184 100%
+      );
+      
+}
+
+.card-ml {
+    background: linear-gradient(
+        to right, 
+        #06B1B7, 
+        #034F52, 
+        #021E20
+      );
+      
+
+      
+}
+
+.card-mobile {
+    background: linear-gradient(
+        to right, 
+        #06B1B7, 
+        #028A91, 
+        #025C61
+      );
+      
+}
